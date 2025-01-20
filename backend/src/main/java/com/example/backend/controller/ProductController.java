@@ -16,21 +16,18 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    // Endpoint: Crear un nuevo producto
     @PostMapping
     public ResponseEntity<Product> createProduct(@Valid @RequestBody Product product) {
         Product createdProduct = productService.createProduct(product);
         return ResponseEntity.ok(createdProduct);
     }
 
-    // Endpoint: Listar todos los productos
     @GetMapping
     public ResponseEntity<List<Product>> getAllProducts() {
         List<Product> products = productService.findAllProducts();
         return ResponseEntity.ok(products);
     }
 
-    // Endpoint: Obtener un producto por ID
     @GetMapping("/{id}")
     public ResponseEntity<Product> getProductById(@PathVariable Long id) {
         return productService.findProductById(id)
@@ -45,7 +42,6 @@ public class ProductController {
         return ResponseEntity.ok(updatedProduct);
     }
 
-    // Endpoint: Eliminar un producto por ID
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);

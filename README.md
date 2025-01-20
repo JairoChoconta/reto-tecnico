@@ -2,14 +2,12 @@
 
 ## Descripción del Proyecto
 
-Esta aplicación permite a los usuarios gestionar un inventario de productos. Las funcionalidades incluyen:
+Aplicación que hace parte del reto técnico para la vacante del Banco de Bogotá, la cual permite a los usuarios gestionar un inventario de productos. La aplicación está dividida en un **frontend** desarrollado con React y un **backend** desarrollado con Spring Boot. Las funcionalidades son:
 
 - Listar productos existentes.
 - Agregar nuevos productos.
 - Modificar productos existentes.
 - Eliminar productos.
-
-La aplicación está dividida en un **frontend** desarrollado con React y un **backend** desarrollado con Spring Boot.
 
 ---
 
@@ -39,23 +37,23 @@ La aplicación está dividida en un **frontend** desarrollado con React y un **b
 
 ### Pasos para el Backend
 
-1. Clona el repositorio:
+1. Para clonar el repositorio:
    ```bash
    git clone <URL-del-repositorio>
    cd backend
    ```
 
-2. Construye el proyecto con Maven:
+2. Para construir el proyecto con Maven (dentro de backend):
    ```bash
    mvn clean install
    ```
 
-3. Ejecuta la aplicación:
+3. Ejecutar la aplicación (backend):
    ```bash
    mvn spring-boot:run
    ```
 
-4. Accede a la consola de H2 para inspeccionar la base de datos (opcional):
+4. Acceder a la consola de H2 para inspeccionar la base de datos (opcional):
    - URL: `http://localhost:8080/h2-console`
    - Credenciales: `jdbc:h2:mem:demo`, usuario: `sa`, contraseña: `sa`
 
@@ -63,22 +61,26 @@ La aplicación está dividida en un **frontend** desarrollado con React y un **b
 
 ### Pasos para el Frontend
 
-1. Navega a la carpeta del frontend:
+1. Navegar a la carpeta del frontend:
    ```bash
    cd frontend
    ```
 
-2. Instala las dependencias:
+2. Instalar las dependencias:
    ```bash
    npm install
    ```
 
-3. Ejecuta la aplicación:
+3. Ejecutar la aplicación:
    ```bash
-   npm start
+   npm run dev
    ```
 
-4. Accede al frontend desde tu navegador en `http://localhost:3000`.
+4. Acceder al frontend en el navegador, desde `http://localhost:5173/`.
+
+5. Ingresar/Actualizar producto.
+
+6. Actualizar navegador (F5).
 
 ---
 
@@ -86,14 +88,14 @@ La aplicación está dividida en un **frontend** desarrollado con React y un **b
 
 #### Backend
 
-1. Para ejecutar las pruebas unitarias del backend, usa el comando:
+1. Para ejecutar las pruebas unitarias del backend, se debe usar el comando:
    ```bash
    mvn test
    ```
 
 #### Frontend
 
-1. Para ejecutar las pruebas unitarias del frontend, usa el comando:
+1. Para ejecutar las pruebas unitarias del frontend, se debe usar el comando:
    ```bash
    npm test
    ```
@@ -147,6 +149,6 @@ reto-tecnico/
 
 ---
 
-## Autores
+## Autor
 
 - jalexcode

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { createProduct, updateProduct } from "../services/productService";
+import './ProductForm.css';
 
 const ProductForm = ({ onSubmit, initialData }) => {
   const [product, setProduct] = useState({
@@ -12,7 +13,6 @@ const ProductForm = ({ onSubmit, initialData }) => {
   const [loading, setLoading] = useState(false); // Estado para manejar el cargando
   const [message, setMessage] = useState(""); // Mensaje de éxito o error
 
-  // Sincronizar initialData con product
   useEffect(() => {
     if (initialData) {
       setProduct(initialData);
@@ -32,16 +32,14 @@ const ProductForm = ({ onSubmit, initialData }) => {
     setLoading(true);
     try {
       if (product.id) {
-        // Actualizar producto
         await updateProduct(product.id, product);
         setMessage(`Producto "${product.nombre}" actualizado exitosamente`);
       } else {
-        // Crear producto
         await createProduct(product);
         setMessage(`Producto "${product.nombre}" guardado exitosamente`);
       }
-      setProduct({ id: null, nombre: "", categoria: "", precio: "", cantidad: "" }); // Limpia el formulario
-      if (onSubmit) onSubmit(); // Notificar a App.jsx para recargar lista
+      setProduct({ id: null, nombre: "", categoria: "", precio: "", cantidad: "" }); // Limpiar el formulario
+      if (onSubmit) onSubmit();
     } catch (error) {
       setMessage("Error al guardar el producto");
       console.error(error);

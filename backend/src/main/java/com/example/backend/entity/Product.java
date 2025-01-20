@@ -22,11 +22,11 @@ public class Product {
     @Min(value = 0, message = "La cantidad no puede ser negativa")
     private int cantidad;
 
-    // Constructor vacío (necesario para JPA)
+    // Constructor vacío (JPA)
     public Product() {
     }
 
-    // Constructor con todos los campos (útil para pruebas y creación de objetos)
+    // Constructor con todos los campos
     public Product(Long id, String nombre, String categoria, double precio, int cantidad) {
         this.id = id;
         this.nombre = nombre;

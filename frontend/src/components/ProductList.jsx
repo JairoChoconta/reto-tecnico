@@ -5,7 +5,6 @@ const ProductList = ({ onEdit }) => {
   const [products, setProducts] = useState([]);
   const [message, setMessage] = useState("");
 
-  // Cargar productos desde el backend
   const fetchAllProducts = async () => {
     try {
       const data = await fetchProducts();
@@ -16,7 +15,6 @@ const ProductList = ({ onEdit }) => {
     }
   };
 
-  // Eliminar un producto
   const handleDelete = async (id) => {
     try {
       await deleteProduct(id);
